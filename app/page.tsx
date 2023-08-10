@@ -1,3 +1,4 @@
+import Board from "@/components/Board"
 import Header from "@/components/header"
 
 export default function Home() {
@@ -5,6 +6,9 @@ export default function Home() {
     <main >
       {/* Header */}
       <Header />
+
+      {/* Board */}
+      <Board />
 
 
     </main>

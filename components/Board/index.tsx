@@ -9,7 +9,7 @@ import Column from '../Column/Column';
 
 function Board() {
 
-    const [board, getBoard, setBoardState] = useBoardStore((state) => [state.board, state.getBoard, state.setBoardState])
+    const [board, getBoard, setBoardState, updateTodoInDb] = useBoardStore((state) => [state.board, state.getBoard, state.setBoardState, state.updateTodoInDb])
     useEffect(() => {
         getBoard()
     }, [getBoard])
@@ -79,6 +79,9 @@ function Board() {
                 id: finishCol.id,
                 todos: finishTodos
             })
+
+
+            updateTodoInDb(todoMoved, finishCol.id);
             setBoardState({ ...board, column: newColumns })
 
         }
